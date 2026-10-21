@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+
+    <header>
+      <div class="header-left">
+        <span class="logo">📚</span>
+        <h1>Learning Extractor</h1>
+      </div>
+      <div class="overall-badge" id="overall-badge">0%</div>
+    </header>
+
+    <div class="toolbar">
+      <button id="btn-copy" class="tool-btn" title="Copy the learning extractor prompt to clipboard">
+        📋 Copy Prompt
+      </button>
+      <button id="btn-add" class="tool-btn" title="Manually add the current tab as a chat to track">
+        ➕ Add Tab
+      </button>
+      <button id="btn-random" class="tool-btn" title="Open a random unfinished chat">
+        🎲 Random
+      </button>
+    </div>
+
+    <div class="nudge-bar">
+      <label class="nudge-toggle" title="Enable nudge notifications">
+        <span class="toggle-track">
+          <input type="checkbox" id="nudge-toggle-input">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="toggle-label">🔔 Nudges</span>
+      </label>
+      <span class="nudge-sep">every</span>
+      <input id="nudge-hours" class="nudge-hours-input" type="number" min="1" max="10080" value="60">
+      <span class="nudge-sep">min</span>
+      <button id="btn-test-nudge" class="test-btn" title="Send a test notification right now">Test</button>
+    </div>
+
+    <div id="chat-list"></div>
+
+    <footer>
+      <button id="btn-export" class="foot-btn">⬆ Export</button>
+      <button id="btn-import" class="foot-btn">⬇ Import</button>
+      <button id="btn-about" class="foot-btn" title="About, credits and updates">ℹ About</button>
+      <input type="file" id="import-file" accept=".json" style="display:none">
+      <span id="status-msg"></span>
+    </footer>
+
+  </div>
+  <script src="utils.js"></script>
+  <script src="prompt.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
